@@ -1,0 +1,5 @@
+@import "tailwindcss";
+.mask-gradient {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
+}
