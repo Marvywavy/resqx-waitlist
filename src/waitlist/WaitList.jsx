@@ -77,13 +77,13 @@ function WaitList() {
 
                 <div
                     style={{ backgroundColor: "#6D5E4E" }}
-                    className="fixed text-white text-xl w-full h-screen pt-16"
+                    className="fixed text-white text-xl w-full sm:w-full md:w-full lg:w-full h-screen pt-16 "
                     >
                     <div className="flex justify-center">
                         <img
                         src={bus}
                         alt="Resqx fuel Tank"
-                        className="w-full h-[calc(100vh-64px)] opacity-60 mask-gradient"
+                        className="w-full h-[calc(100vh-64px)] opacity-60  mask-gradient "
                         />
                     </div>
                 </div>
@@ -96,8 +96,8 @@ function WaitList() {
 
                 
 
-                    <div className="grid grid-cols-1 sm:place-items-center md:place-items-center lg:grid-cols-2 m-7 font-['General Sans'] tracking-[0.01em] text-white gap-10 text-[18px]">
-                        <div className="flex  flex-col sm:w:full md:w-[80%]  lg:w-full gap-5">
+                    <div className="grid grid-cols-1  lg:grid-cols-2 m-7 font-['General Sans'] tracking-[0.01em] text-white gap-10 text-[18px]">
+                        <div className="flex  flex-col sm:w:full md:w-[80%]  lg:w-full gap-5 m-0">
                             <div className="w-full">
                                 <p
                                     className=" font-semibold text-[30px] leading-[100%]  "
@@ -219,7 +219,7 @@ function WaitList() {
 
 
 
-                        <div className="bg-white sm:w-full md:w-[80%] lg:w-[80%] rounded-4xl p-7 text-[#777777] flex flex-col items-center gap-5">
+                        <div className="bg-white sm:w-full m-0 md:w-[80%] lg:w-[80%] rounded-4xl p-7 text-[#777777] flex flex-col items-center gap-5">
                             <div className="w-full flex flex-col items-center justify-center gap-3">
                                 <p className="font-semibold text-[30px] leading-[100%] w-[90%] text-center">
                                     Be the first to fuel smarter with ResQ-X and get Early Access
