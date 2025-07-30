@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: "/Resqx-Waitlist",
+  base: "/resqx-waitlist",
 })
