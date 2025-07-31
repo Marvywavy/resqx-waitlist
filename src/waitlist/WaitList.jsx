@@ -11,11 +11,9 @@ function WaitList() {
       e.preventDefault(); // Prevent the default HTML form submission behavior (page reload)
 
       // Get values of input fields using jQuery selectors (corrected spacing)
-      const name = $("input[name='name']").val().trim; 
-      const email = $("input[name='email']").val().trim; 
+      const name = $("input[name='name']").val().trim(); 
+      const email = $("input[name='email']").val().trim(); 
 
-
-   
 
 
       // Create a new FormData object to format the data like an HTML form
