@@ -14,8 +14,6 @@ function WaitList() {
       const name = $("input[name='name']").val().trim; 
       const email = $("input[name='email']").val().trim; 
 
-      // Regular expression to validate email format
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     // Basic validation
     if (!name) {
@@ -28,10 +26,6 @@ function WaitList() {
       return;
     }
 
-    if (!emailPattern.test(email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
 
       // Create a new FormData object to format the data like an HTML form
       const formData = new FormData();
@@ -219,7 +213,7 @@ function WaitList() {
 
 
 
-                        <div className="bg-white sm:w-full md:w-[80%] lg:w-[80%] rounded-4xl p-7 text-[#777777] flex flex-col items-center gap-5">
+                        <div className="bg-white sm:w-full md:w-[80%] lg:w-[80%] border border-[#FF8500] border-[] rounded-4xl p-7 text-[#777777] flex flex-col items-center gap-5">
                             <div className="w-full flex flex-col items-center justify-center gap-3">
                                 <p className="font-semibold text-[30px] leading-[100%] w-[90%] text-center">
                                     Be the first to fuel smarter with ResQ-X and get Early Access
@@ -235,19 +229,19 @@ function WaitList() {
                                     type="text" 
                                     name="name"
                                     placeholder="Tell us your name " 
-                                    className="border border-[#C6C6C6] w-full px-5 py-2 rounded-lg focus:outline-none focus:border-[#FF8500] transition duration-300" 
+                                    className="border border-[#C6C6C6] w-full px-5 py-2 rounded-[12px] focus:outline-none focus:border-[#FF8500] transition duration-300" 
                                 />
 
                                 <input 
                                     type="email" 
                                     name="email"
                                     placeholder="Enter your email address " 
-                                    className="border border-[#C6C6C6] w-full px-5 py-2 rounded-lg focus:outline-none focus:border-[#FF8500] transition duration-300" 
+                                    className="border border-[#C6C6C6] w-full px-5 py-2 rounded-[12px] focus:outline-none focus:border-[#FF8500] transition duration-300" 
                                 />
 
                                 <button
                                     type="submit"
-                                    className="w-full bg-[#FF8500] text-white text-sm py-2 border rounded-lg cursor-pointer mt-[50px]"
+                                    className="w-full bg-[#FF8500] text-white text-sm py-3 border rounded-[12px] cursor-pointer mt-[50px] lg:mt-5"
                                 >
                                     Join WaitList
                                 </button>
