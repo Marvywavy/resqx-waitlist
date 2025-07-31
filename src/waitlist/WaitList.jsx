@@ -15,16 +15,7 @@ function WaitList() {
       const email = $("input[name='email']").val().trim; 
 
 
-    // Basic validation
-    if (!name) {
-      alert("Please enter your name.");
-      return;
-    }
-
-    if (!email) {
-      alert("Please enter your email.");
-      return;
-    }
+   
 
 
       // Create a new FormData object to format the data like an HTML form
