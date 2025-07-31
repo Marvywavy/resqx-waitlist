@@ -89,7 +89,7 @@ function WaitList() {
                 </div>
 
 
-                <div className="absolute inset-0 lg:ml-[70px] lg:mt-[20px]" >
+                <div className="absolute inset-0 lg:ml-[70px] lg:mt-[20px]  justify-center overflow-x-hidden " >
                     <div className="w-50 mt-5 mx-7">
                         <img src={logo} alt="Resqx logo " />
                     </div>
@@ -247,7 +247,7 @@ function WaitList() {
 
                                 <button
                                     type="submit"
-                                    className="w-full bg-[#FF8500] text-white text-sm py-2 border rounded-lg cursor-pointer lg:mt-[50px]"
+                                    className="w-full bg-[#FF8500] text-white text-sm py-2 border rounded-lg cursor-pointer mt-[50px]"
                                 >
                                     Join WaitList
                                 </button>
