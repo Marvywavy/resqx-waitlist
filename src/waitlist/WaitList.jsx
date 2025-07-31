@@ -72,14 +72,14 @@ function WaitList() {
                 </div>
 
 
-                <div className="absolute inset-0 lg:ml-[70px] lg:mt-[20px] flex flex-col justify-start overflow-x-hidden " >
+                <div className="absolute inset-0 lg:ml-[70px] lg:mt-[20px] flex flex-col  justify-start overflow-x-hidden " >
                     <div className="w-50 mt-5 mx-7">
                         <img src={logo} alt="Resqx logo " />
                     </div>
 
                 
 
-                    <div className="grid grid-cols-1  lg:grid-cols-2 m-7 font-['General Sans'] tracking-[0.01em] text-white gap-10 text-[18px]">
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 m-7 font-['General_Sans'] tracking-[0.01em] text-white text-[18px] md:justify-items-center">
                         <div className="flex  flex-col sm:w:full md:w-[80%]  lg:w-full gap-5 m-0">
                             <div className="w-full">
                                 <p
@@ -184,17 +184,17 @@ function WaitList() {
                                     </p>
                                 </div>
 
-                                <div className=" flex w-[80%] justify-between">
+                                <div className=" flex sm:flex-col sm:gap-4 md:flex-row lg:flex-row w-[100%] justify-between">
                                     <p
-                                        className="border border-[#FF8500] bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                        className="border border-[#FF8500] sm:w-[30%]  bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                     >Fleets and Business</p>
 
                                     <p
-                                        className="border border-[#FF8500] bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                        className="border border-[#FF8500] sm:w-[30%] bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                     >Everyday Drivers </p>
 
                                     <p
-                                        className="border border-[#FF8500] bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                        className="border border-[#FF8500] sm:w-[30%] bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                     >Busy Professionals </p>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@ function WaitList() {
 
 
 
-                        <div className="bg-white sm:w-full md:w-[80%] lg:w-[80%] border border-[#FF8500] border-[] rounded-4xl p-7 text-[#777777] flex flex-col items-center gap-5">
+                        <div className="bg-white sm:w-full md:w-[80%] lg:w-[80%] border border-[#FF8500] border-[] rounded-4xl py-7 px-0  text-[#777777] flex flex-col items-center gap-5">
                             <div className="w-full flex flex-col items-center justify-center gap-3">
                                 <p className="font-semibold text-[30px] leading-[100%] w-[80%] text-center">
                                     Be the first to fuel smarter with Refuel by ResQ-X 
