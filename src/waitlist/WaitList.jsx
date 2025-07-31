@@ -184,17 +184,17 @@ function WaitList() {
                                     </p>
                                 </div>
 
-                                <div className=" flex sm:flex-col sm:gap-4 md:flex-row lg:flex-row w-[100%] justify-between">
+                                <div className=" flex flex-col gap-4 md:flex-row lg:flex-row w-[100%] justify-between">
                                     <p
-                                        className="border border-[#FF8500] sm:w-[30%]  bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                        className="border border-[#FF8500] w-[70%]  bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                     >Fleets and Business</p>
 
                                     <p
-                                        className="border border-[#FF8500] sm:w-[30%] bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                        className="border border-[#FF8500] w-[70%] bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                     >Everyday Drivers </p>
 
                                     <p
-                                        className="border border-[#FF8500] sm:w-[30%] bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                        className="border border-[#FF8500] w-[70%] bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                     >Busy Professionals </p>
                                 </div>
                             </div>
