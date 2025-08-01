@@ -204,11 +204,11 @@ function WaitList() {
 
                         <div className="bg-white sm:w-full md:w-[70%] lg:w-[70%] border border-[#FF8500] border-[] rounded-4xl py-7 px-0  text-[#777777] flex flex-col items-center gap-5">
                             <div className="w-full flex flex-col items-center justify-center gap-3">
-                                <p className="font-semibold text-[30px] leading-[100%] w-[90%] text-center">
+                                <p className="font-semibold text-[30px] leading-[100%] w-[75%] text-center">
                                     Be the first to fuel smarter with Refuel by ResQ-X 
                                 </p>
 
-                                <p className="w-[80%] text-center text-[18px] leading-[26px] tracking-[0.02em]">
+                                <p className="w-[82%] text-center text-[18px] leading-[26px] tracking-[0.02em]">
                                     ResQ-X delivers fuel straight to your vehicle  at home, at work or on the road. Anytime you need it.
                                 </p>
                             </div>
@@ -230,7 +230,7 @@ function WaitList() {
 
                                 <button
                                     type="submit"
-                                    className="w-full bg-[#FF8500] text-white text-sm py-3 border rounded-[12px] cursor-pointer mt-[50px] lg:mt-5"
+                                    className="w-full bg-[#FF8500] text-white font-bold text-sm py-3 border rounded-[12px] cursor-pointer mt-[50px] lg:mt-5"
                                 >
                                     Join WaitList
                                 </button>
