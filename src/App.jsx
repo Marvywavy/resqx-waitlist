@@ -1,4 +1,4 @@
-import WaitList from "./waitlist/WaitList";
+import WaitList from "./components/WaitList";
 
 function App() {
 

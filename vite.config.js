@@ -7,6 +7,6 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: "/resqx-waitlist", // ✅ Now correctly matches your repo name
+  //base: "/resqx-waitlist", // ✅ Now correctly matches your repo name
 })
 
