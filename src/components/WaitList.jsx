@@ -1,7 +1,11 @@
-import { useEffect } from "react"; 
+import  {useState, useEffect } from "react"; 
 import $ from "jquery"; 
 import bus from "../assets/images/bus.png"; 
 import logo from "../assets/images/logo.png"; 
+import james from "../assets/images/james.jpg"; 
+import john from "../assets/images/john.jpg"; 
+import joy from "../assets/images/joy.jpg"; 
+
 
 function WaitList() {
   // useEffect will run only once after the component mounts ([]) 
@@ -50,13 +54,42 @@ function WaitList() {
     return () => {
       $("#waitlistForm").off("submit", handleSubmit);
     };
-  }, []); // Empty dependency array ensures this runs only once
+    }, []); // Empty dependency array ensures this runs only once
 
+    const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    });
+
+    useEffect(() => {
+    const endTime = new Date().getTime() + 45 * 24 * 60 * 60 * 1000; // 45 days in ms
+
+    const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const diff = endTime - now;
+
+        if (diff <= 0) {
+        clearInterval(interval);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0 });
+        return;
+        }
+
+        const totalMinutes = Math.floor(diff / (1000 * 60));
+        const days = Math.floor(totalMinutes / (60 * 24));
+        const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
+        const minutes = totalMinutes % 60;
+
+        setTimeLeft({ days, hours, minutes });
+    }, 1000);
+
+    return () => clearInterval(interval);
+    }, []);
 
 
     return(
         <>
-            <div className="overflow-hidden">
+            <div className="overflow-x-hidden">
 
                 <div
                     style={{ backgroundColor: "#6D5E4E" }}
@@ -66,20 +99,20 @@ function WaitList() {
                         <img
                         src={bus}
                         alt="Resqx fuel Tank"
-                        className="w-full h-[calc(100vh-64px)] object-cover opacity-60  mask-gradient "
+                        className="w-full  object-cover opacity-60  mask-gradient "
                         />
                     </div>
                 </div>
 
 
-<div className="absolute inset-0 lg:ml-[70px] lg:mt-[20px] flex flex-col lg:justify-center overflow-x-hidden">
+                <div className="absolute  lg:ml-[70px] lg:mt-[20px] flex flex-col lg:justify-center overflow-x-hidden">
                     <div className="w-50 mt-5 mx-7">
                         <img src={logo} alt="Resqx logo " />
                     </div>
 
                 
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 m-7 font-['General_Sans'] tracking-[0.01em] text-white text-[18px] md:justify-items-center">
+                    <div className="grid grid-cols-1 sm:w-full lg:grid-cols-2 gap-10 m-7 font-['General_Sans'] tracking-[0.01em] text-white text-[18px] md:justify-items-center">
                         <div className="flex  flex-col sm:w:full md:w-[80%]  lg:w-full gap-5 m-0">
                             <div className="w-full">
                                 <p
@@ -176,28 +209,34 @@ function WaitList() {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col w-full gap-5 mt-7">
-                                <div>
-                                    <p
-                                        className=" font-semibold text-[30px] leading-[100%] w-[671px] "
-                                        >Fueling Solutions For:
-                                    </p>
+                        <div className="w-[95%] rounded-[18px] border-1 border-[#FF2914] bg-white p-7 text-center">
+                            <h2 className="text-[#FF2914] font-semibold text-lg mb-4">
+                                Early Bird Bonus Expires In:
+                            </h2>
+
+                            <div className="flex justify-between text-center text-[#FF2914] font-bold text-3xl px-4">
+                                {/* Days */}
+                                <div className="flex flex-col items-center">
+                                <span>{timeLeft.days}</span>
+                                <span className="text-xs font-normal mt-1 text-[#FF2914]">Days</span>
                                 </div>
 
-                                <div className=" flex flex-col gap-4 md:flex-row lg:flex-row w-[100%] justify-between">
-                                    <p
-                                        className="border border-[#FF8500] w-[70%] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
-                                    >Fleets and Business</p>
+                                {/* Hours */}
+                                <div className="flex flex-col items-center">
+                                <span>{timeLeft.hours}</span>
+                                <span className="text-xs font-normal mt-1 text-[#FF2914]">Hours</span>
+                                </div>
 
-                                    <p
-                                        className="border border-[#FF8500] w-[70%] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
-                                    >Everyday Drivers </p>
-
-                                    <p
-                                        className="border border-[#FF8500] w-[70%] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
-                                    >Busy Professionals </p>
+                                {/* Minutes */}
+                                <div className="flex flex-col items-center">
+                                <span>{timeLeft.minutes}</span>
+                                <span className="text-xs font-normal mt-1 text-[#FF2914]">Minutes</span>
                                 </div>
                             </div>
+                        </div>
+
+
+
                         </div>
 
 
@@ -238,6 +277,110 @@ function WaitList() {
 
                         </div>
 
+
+
+
+                    </div>
+
+                    
+
+
+                    <div className="tracking-[0.01em] text-white text-[18px] px-7 mb-7">
+                        <div className="flex lg:flex-col w-[45%] gap-5 mt-7 ">
+                            <div>
+                                <p
+                                    className=" font-semibold text-[30px] leading-[100%] w-[671px] "
+                                    >Fueling Solutions For:
+                                </p>
+                            </div>
+
+                            <div className=" flex flex-col gap-4 md:flex-row lg:flex-row w-[100%] justify-between">
+                                <p
+                                    className="border border-[#FF8500] w-[70%] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                >Fleets and Business</p>
+
+                                <p
+                                    className="border border-[#FF8500] w-[70%] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                >Everyday Drivers </p>
+
+                                <p
+                                    className="border border-[#FF8500] w-[70%] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                >Busy Professionals </p>
+                            </div>
+                        </div>
+
+                        <div className=" mt-7 ">
+                            <p className="font-[600] text-[36px]">
+                                Testimonials from Our Beta Testers
+                            </p>
+
+                            <div className="flex flex-row text-[#5E5E5E] gap-7 text-[18px]">
+                                <div className="bg-white border border-[#FF8500] h-[180px] rounded-[30px] p-7">
+                                    <p>
+                                        No more 5am fuel runs or fighting at stations. This is the future
+                                    </p>
+                                    <div className="flex flex-row mt-2">
+                                        <img
+                                        src={john}
+                                        alt="Resqx fuel Tank"
+                                        className="w-[40px] h-[40px] rounded-full object-cover "
+                                        />
+
+                                        <div>
+                                            <p>Femi John</p>
+                                            <p className="text-yellow-500 ">
+                                                ★★★★★
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="bg-white border border-[#FF8500] h-[180px] rounded-[30px] p-7">
+                                    <p>
+                                        No more 5am fuel runs or fighting at stations. This is the future
+                                    </p>
+                                    <div className="flex flex-row mt-2">
+                                        <img
+                                        src={joy}
+                                        alt="Resqx fuel Tank"
+                                        className="w-[40px] h-[40px] rounded-full object-cover "
+                                        />
+
+                                        <div>
+                                            <p>Abby Joy</p>
+                                            <p className="text-yellow-500 ">
+                                                ★★★★★
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="bg-white border border-[#FF8500] h-[180px] rounded-[30px] p-7">
+                                    <p>
+                                        No more getting cheated at fuel station, fair pricing and accurate litres
+                                    </p>
+                                    <div className="flex flex-row mt-2">
+                                        <img
+                                        src={james}
+                                        alt="Resqx fuel Tank"
+                                        className="w-[40px] h-[40px] rounded-full object-cover "
+                                        />
+
+                                        <div>
+                                            <p>Obi James</p>
+                                            <p className="text-yellow-500 ">
+                                                ★★★★★
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
