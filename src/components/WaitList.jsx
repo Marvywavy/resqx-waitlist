@@ -112,8 +112,8 @@ function WaitList() {
 
                 
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-10 m-7 font-['General_Sans'] tracking-[0.01em] text-white text-[18px]  justify-items-start">
-                        <div className="flex  flex-col w-[80%] lg:w-[100%] justify-items-center gap-5 m-0">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-10 my-0 lg:m-7 font-['General_Sans'] tracking-[0.01em] text-white text-[18px]  justify-items-center">
+                        <div className="flex  flex-col w-[80%] lg:w-[100%] justify-items-center gap-5 m-0 my-7">
                             <div className="w-full">
                                 <p
                                     className=" font-semibold text-[35px] leading-[100%] lg:w-70vw "
@@ -130,8 +130,8 @@ function WaitList() {
                                 </p>     
                             </div>
 
-                            <div className="grid grid-cols-2 gap-5 w-full">
-                                <div className="flex items-center bg-[#FFFFFF12]  gap-3 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[90%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
+                            <div className="grid grid-cols-2 gap-2 md:gap-5 lg:gap-5 w-full">
+                                <div className="flex items-center bg-[#FFFFFF12]  gap-3 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[100%] lg:w-[100%] md:w-[100%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
                                     <svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M10.192 0.279976L0.231997 10.528C0.0639974 10.696 0.183998 10.96 0.399998 10.96H6.16C6.352 10.96 6.472 11.152 6.4 11.32L2.776 19.456C2.656 19.72 2.992 19.936 3.184 19.72L13.696 7.81598C13.84 7.64798 13.72 7.38398 13.504 7.38398H7.408C7.216 7.38398 7.096 7.19198 7.192 7.02398L10.576 0.567976C10.72 0.327976 10.384 0.087976 10.192 0.279976Z" fill="#FF8500"/>
                                     </svg>
@@ -143,7 +143,7 @@ function WaitList() {
                                     </div>
                                 </div>
 
-                                <div className="flex items-center bg-[#FFFFFF12]  gap-4 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[90%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
+                                <div className="flex items-center bg-[#FFFFFF12]  gap-4 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[100%] lg:w-[100%] md:w-[100%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M19 2.8999H18V1.8999C18 1.2999 17.6 0.899902 17 0.899902C16.4 0.899902 16 1.2999 16 1.8999V2.8999H8V1.8999C8 1.2999 7.6 0.899902 7 0.899902C6.4 0.899902 6 1.2999 6 1.8999V2.8999H5C3.3 2.8999 2 4.1999 2 5.8999V19.8999C2 21.5999 3.3 22.8999 5 22.8999H19C20.7 22.8999 22 21.5999 22 19.8999V5.8999C22 4.2999 20.7 2.8999 19 2.8999ZM7 18.8999C6.4 18.8999 6 18.4999 6 17.8999C6 17.2999 6.4 16.8999 7 16.8999C7.6 16.8999 8 17.2999 8 17.8999C8 18.4999 7.6 18.8999 7 18.8999ZM7 14.8999C6.4 14.8999 6 14.4999 6 13.8999C6 13.2999 6.4 12.8999 7 12.8999C7.6 12.8999 8 13.2999 8 13.8999C8 14.4999 7.6 14.8999 7 14.8999ZM12 18.8999C11.4 18.8999 11 18.4999 11 17.8999C11 17.2999 11.4 16.8999 12 16.8999C12.6 16.8999 13 17.2999 13 17.8999C13 18.4999 12.6 18.8999 12 18.8999ZM12 14.8999C11.4 14.8999 11 14.4999 11 13.8999C11 13.2999 11.4 12.8999 12 12.8999C12.6 12.8999 13 13.2999 13 13.8999C13 14.4999 12.6 14.8999 12 14.8999ZM17 18.8999C16.4 18.8999 16 18.4999 16 17.8999C16 17.2999 16.4 16.8999 17 16.8999C17.6 16.8999 18 17.2999 18 17.8999C18 18.4999 17.6 18.8999 17 18.8999ZM17 14.8999C16.4 14.8999 16 14.4999 16 13.8999C16 13.2999 16.4 12.8999 17 12.8999C17.6 12.8999 18 13.2999 18 13.8999C18 14.4999 17.6 14.8999 17 14.8999ZM20 8.8999H4V5.8999C4 5.2999 4.4 4.8999 5 4.8999H6V5.8999C6 6.4999 6.4 6.8999 7 6.8999C7.6 6.8999 8 6.4999 8 5.8999V4.8999H16V5.8999C16 6.4999 16.4 6.8999 17 6.8999C17.6 6.8999 18 6.4999 18 5.8999V4.8999H19C19.6 4.8999 20 5.2999 20 5.8999V8.8999Z" fill="#FF8500"/>
                                     </svg>
@@ -156,7 +156,7 @@ function WaitList() {
                                     </div>
                                 </div>
 
-                                <div className="flex items-center bg-[#FFFFFF12]  gap-3 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[90%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
+                                <div className="flex items-center bg-[#FFFFFF12]  gap-3 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[100%] lg:w-[100%] md:w-[100%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_1703_56)">
                                         <path d="M15.375 13.875L17.4375 15.9375L15.9375 17.4375L13.875 15.375L15.375 13.875Z" fill="#FF8500"/>
@@ -183,7 +183,7 @@ function WaitList() {
                                     </div>
                                 </div>
 
-                                <div className="flex items-center bg-[#FFFFFF12]  gap-3 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[90%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
+                                <div className="flex items-center bg-[#FFFFFF12]  gap-3 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[100%] lg:w-[100%] md:w-[100%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_1703_56)">
                                         <path d="M15.375 13.875L17.4375 15.9375L15.9375 17.4375L13.875 15.375L15.375 13.875Z" fill="#FF8500"/>
@@ -209,7 +209,7 @@ function WaitList() {
                                 </div>
                             </div>
 
-                        <div className="w-[80%] lg:w-[100%] rounded-[18px] border-1 border-[#FF2914] bg-white p-7 text-center">
+                        <div className="w-full lg:w-[100%] rounded-[18px] border-1 border-[#FF2914] bg-white p-7 text-center">
                             <h2 className="text-[#FF2914] font-semibold text-lg mb-4">
                                 Early Bird Bonus Expires In:
                             </h2>
@@ -241,7 +241,7 @@ function WaitList() {
 
 
 
-                        <div className="bg-white w-[70%] border border-[#FF8500] border-[] rounded-4xl py-7 px-0  text-[#777777] flex flex-col items-center gap-5">
+                        <div className="bg-white w-[80%] border border-[#FF8500] border-[] rounded-4xl py-7 px-0  text-[#777777] flex flex-col items-center gap-5">
                             <div className="w-full flex flex-col items-center justify-center gap-3">
                                 <p className="font-semibold text-[30px] leading-[100%] w-[75%] text-center">
                                     Be the first to fuel smarter with Refuel by ResQ-X 
@@ -285,16 +285,16 @@ function WaitList() {
                     
 
 
-                    <div className="tracking-[0.01em] text-white text-[18px] px-7 mb-7 w-full">
+                    <div className=" tracking-[0.01em] text-white text-[18px] px-7  w-full my-7">
                         <div className=" w-full lg:w-[50%]">
                             <div>
                                 <p
-                                    className=" font-semibold text-[30px] leading-[100%] w-[671px] mb-3 "
+                                    className=" font-semibold text-[30px] leading-[100%] mb-3 text-center "
                                     >Fueling Solutions For:
                                 </p>
                             </div>
 
-                            <div className=" flex flex-col gap-4 md:flex-row lg:flex-row w-[100%] justify-between">
+                            <div className=" flex flex-col items-center gap-4 md:flex-row md:justify-between w-full">
                                 <p
                                     className="border border-[#FF8500] w-[70%] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Fleets and Business</p>
@@ -312,8 +312,8 @@ function WaitList() {
                         
                     </div>
 
-                    <div className="ml-7 mt-7 w-full lg:w-[100%] mb-7 md:w-80%">
-                            <p className="lg:font-[600] lg:text-[36px] font-[600] text-[25px]  text-white w-full">
+                    <div className="ml-7  w-full lg:w-[100%] mb-7 md:w-80%">
+                            <p className="lg:font-[600] lg:text-[36px] font-[600] text-[25px]  text-white w-full mb-5">
                                 Testimonials from Our Beta Testers
                             </p>
 
@@ -322,7 +322,7 @@ function WaitList() {
                                     <p>
                                         No more 5am fuel runs or fighting at stations. This is the future
                                     </p>
-                                    <div className="flex flex-row mt-2">
+                                    <div className="flex flex-row mt-2 gap-5">
                                         <img
                                         src={john}
                                         alt="Resqx fuel Tank"
@@ -343,7 +343,7 @@ function WaitList() {
                                     <p>
                                         No more 5am fuel runs or fighting at stations. This is the future
                                     </p>
-                                    <div className="flex flex-row mt-2">
+                                    <div className="flex flex-row mt-2 gap-5">
                                         <img
                                         src={joy}
                                         alt="Resqx fuel Tank"
@@ -364,7 +364,7 @@ function WaitList() {
                                     <p>
                                         No more getting cheated at fuel station, fair pricing and accurate litres
                                     </p>
-                                    <div className="flex flex-row mt-2">
+                                    <div className="flex flex-row mt-2 gap-5">
                                         <img
                                         src={james}
                                         alt="Resqx fuel Tank"
