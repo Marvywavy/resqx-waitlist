@@ -105,15 +105,15 @@ function WaitList() {
                 </div>
 
 
-                <div className="absolute sm:inset-0 md:inset-0 lg:pt-[400px]  lg:ml-[70px] lg:mt-[0px] flex flex-col lg:justify-center overflow-x-hidden">
+                <div className="relative sm:inset-0 md:inset-0 lg:pt-[10px]  lg:ml-[70px] lg:mt-[0px] flex flex-col lg:justify-center overflow-x-hidden">
                     <div className="w-50 mt-5 mx-7">
                         <img src={logo} alt="Resqx logo " />
                     </div>
 
                 
 
-                    <div className="grid grid-row lg:grid-cols-2 w-[100%] gap-10 m-7 font-['General_Sans'] tracking-[0.01em] text-white text-[18px]  md:justify-items-center">
-                        <div className="flex  flex-col w-[50%] lg:w-[100%] justify-items-start gap-5 m-0">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-10 m-7 font-['General_Sans'] tracking-[0.01em] text-white text-[18px]  justify-items-start">
+                        <div className="flex  flex-col w-[80%] lg:w-[100%] justify-items-center gap-5 m-0">
                             <div className="w-full">
                                 <p
                                     className=" font-semibold text-[35px] leading-[100%] lg:w-70vw "
@@ -241,7 +241,7 @@ function WaitList() {
 
 
 
-                        <div className="bg-white w-[50%] lg:w-[70%] border border-[#FF8500] border-[] rounded-4xl py-7 px-0  text-[#777777] flex flex-col items-center gap-5">
+                        <div className="bg-white w-[70%] border border-[#FF8500] border-[] rounded-4xl py-7 px-0  text-[#777777] flex flex-col items-center gap-5">
                             <div className="w-full flex flex-col items-center justify-center gap-3">
                                 <p className="font-semibold text-[30px] leading-[100%] w-[75%] text-center">
                                     Be the first to fuel smarter with Refuel by ResQ-X 
@@ -286,7 +286,7 @@ function WaitList() {
 
 
                     <div className="tracking-[0.01em] text-white text-[18px] px-7 mb-7 w-full">
-                        <div className=" w-[50%]">
+                        <div className=" w-full">
                             <div>
                                 <p
                                     className=" font-semibold text-[30px] leading-[100%] w-[671px] mb-3 "
@@ -312,7 +312,7 @@ function WaitList() {
                         
                     </div>
 
-                    <div className="ml-7 mt-7 w-[60%] lg:w-[100%] mb-7 md:w-80%">
+                    <div className="ml-7 mt-7 w-full lg:w-[100%] mb-7 md:w-80%">
                             <p className="lg:font-[600] lg:text-[36px] font-[600] text-[25px]  text-white w-full">
                                 Testimonials from Our Beta Testers
                             </p>
