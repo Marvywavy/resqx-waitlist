@@ -89,38 +89,38 @@ function WaitList() {
 
     return(
         <>
-            <div className="overflow-x-hidden">
+            <div className="overflow-x-hidden ">
 
                 <div
                     style={{ backgroundColor: "#6D5E4E" }}
-                    className="fixed text-white text-xl w-full sm:w-full md:w-full lg:w-full h-screen pt-16 "
+                    className="fixed text-white text-xl w-full sm:w-full md:w-full lg:w-full h-screen pt-16  "
                     >
                     <div className="flex justify-center">
                         <img
                         src={bus}
                         alt="Resqx fuel Tank"
-                        className="w-full  object-cover opacity-60  mask-gradient "
+                        className="w-full h-[calc(100vh-64px)] object-cover opacity-60  mask-gradient "
                         />
                     </div>
                 </div>
 
 
-                <div className="absolute  lg:ml-[70px] lg:mt-[20px] flex flex-col lg:justify-center overflow-x-hidden">
+                <div className="absolute sm:inset-0 md:inset-0 lg:pt-[400px]  lg:ml-[70px] lg:mt-[0px] flex flex-col lg:justify-center overflow-x-hidden">
                     <div className="w-50 mt-5 mx-7">
                         <img src={logo} alt="Resqx logo " />
                     </div>
 
                 
 
-                    <div className="grid grid-cols-1 sm:w-full lg:grid-cols-2 gap-10 m-7 font-['General_Sans'] tracking-[0.01em] text-white text-[18px] md:justify-items-center">
-                        <div className="flex  flex-col sm:w:full md:w-[80%]  lg:w-full gap-5 m-0">
+                    <div className="grid grid-row lg:grid-cols-2 w-[100%] gap-10 m-7 font-['General_Sans'] tracking-[0.01em] text-white text-[18px]  md:justify-items-center">
+                        <div className="flex  flex-col w-[50%] lg:w-[100%] justify-items-start gap-5 m-0">
                             <div className="w-full">
                                 <p
-                                    className=" font-semibold text-[35px] leading-[100%] lg:w-[70%] "
+                                    className=" font-semibold text-[35px] leading-[100%] lg:w-70vw "
                                 >Fuel Delivered. Anytime, Anywhere.</p>
                             </div>
 
-                            <div className="leading-[30px] w-full  ">
+                            <div className="leading-[30px] w-100vw  ">
                                 <p >
                                     Join the Refuel by ResQ-X Waitlist
                                 </p>
@@ -209,7 +209,7 @@ function WaitList() {
                                 </div>
                             </div>
 
-                        <div className="w-[95%] rounded-[18px] border-1 border-[#FF2914] bg-white p-7 text-center">
+                        <div className="w-[80%] lg:w-[100%] rounded-[18px] border-1 border-[#FF2914] bg-white p-7 text-center">
                             <h2 className="text-[#FF2914] font-semibold text-lg mb-4">
                                 Early Bird Bonus Expires In:
                             </h2>
@@ -241,7 +241,7 @@ function WaitList() {
 
 
 
-                        <div className="bg-white sm:w-full md:w-[70%] lg:w-[70%] border border-[#FF8500] border-[] rounded-4xl py-7 px-0  text-[#777777] flex flex-col items-center gap-5">
+                        <div className="bg-white w-[50%] lg:w-[70%] border border-[#FF8500] border-[] rounded-4xl py-7 px-0  text-[#777777] flex flex-col items-center gap-5">
                             <div className="w-full flex flex-col items-center justify-center gap-3">
                                 <p className="font-semibold text-[30px] leading-[100%] w-[75%] text-center">
                                     Be the first to fuel smarter with Refuel by ResQ-X 
@@ -285,11 +285,11 @@ function WaitList() {
                     
 
 
-                    <div className="tracking-[0.01em] text-white text-[18px] px-7 mb-7">
-                        <div className="flex lg:flex-col w-[45%] gap-5 mt-7 ">
+                    <div className="tracking-[0.01em] text-white text-[18px] px-7 mb-7 w-full">
+                        <div className=" w-[50%]">
                             <div>
                                 <p
-                                    className=" font-semibold text-[30px] leading-[100%] w-[671px] "
+                                    className=" font-semibold text-[30px] leading-[100%] w-[671px] mb-3 "
                                     >Fueling Solutions For:
                                 </p>
                             </div>
@@ -309,13 +309,16 @@ function WaitList() {
                             </div>
                         </div>
 
-                        <div className=" mt-7 ">
-                            <p className="font-[600] text-[36px]">
+                        
+                    </div>
+
+                    <div className="ml-7 mt-7 w-[60%] lg:w-[100%] mb-7 md:w-80%">
+                            <p className="lg:font-[600] lg:text-[36px] font-[600] text-[25px]  text-white w-full">
                                 Testimonials from Our Beta Testers
                             </p>
 
-                            <div className="flex flex-row text-[#5E5E5E] gap-7 text-[18px]">
-                                <div className="bg-white border border-[#FF8500] h-[180px] rounded-[30px] p-7">
+                            <div className="flex flex-col lg:flex-row sm:flex-col md:flex-col w-[90%] text-[#5E5E5E] gap-7 text-[18px]">
+                                <div className="bg-white border border-[#FF8500] h-[180px] rounded-[30px] w-auto p-7">
                                     <p>
                                         No more 5am fuel runs or fighting at stations. This is the future
                                     </p>
@@ -381,7 +384,6 @@ function WaitList() {
 
                             </div>
                         </div>
-                    </div>
                 </div>
                 
             </div>
