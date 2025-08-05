@@ -286,7 +286,7 @@ function WaitList() {
 
 
                     <div className="tracking-[0.01em] text-white text-[18px] px-7 mb-7 w-full">
-                        <div className=" w-full">
+                        <div className=" w-full lg:w-[50%]">
                             <div>
                                 <p
                                     className=" font-semibold text-[30px] leading-[100%] w-[671px] mb-3 "
