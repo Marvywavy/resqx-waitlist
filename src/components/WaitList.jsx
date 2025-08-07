@@ -110,14 +110,14 @@ function WaitList() {
                 </div>
 
 
-                <div className="relative sm:inset-0 md:inset-0 lg:pt-[10px]  lg:ml-[70px] lg:mt-[0px] flex flex-col lg:justify-center overflow-x-hidden">
+                <div className="relative sm:inset-0 md:inset-0 lg:pt-[10px]  lg:mx-[70px] lg:mt-[0px] flex flex-col lg:justify-center overflow-x-hidden">
                     <div className="w-50 mt-5 mx-7">
                         <img src={logo} alt="Resqx logo " />
                     </div>
 
                 
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-10 my-0 lg:m-7 font-['General_Sans'] tracking-[0.01em] text-white text-[18px]  justify-items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-10 my-0 lg:m-7  font-['General_Sans'] tracking-[0.01em] text-white text-[18px]  justify-items-center">
                         <div className="flex  flex-col w-[80%] lg:w-[100%] justify-items-center gap-5 m-0 my-7">
                             <div className="w-full">
                                 <p
@@ -134,9 +134,43 @@ function WaitList() {
                                     Save time. Get quality fuel. Fair pricing.
                                 </p>     
 
-                                <p>
+                                <p className="mb-3">
                                     For individuals & businesses: Cars, Generators, Fleets.
                                 </p>
+
+                                <p>
+                                    <svg 
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                                        class="lucide lucide-circle-check-big-icon lucide-circle-check-big inline mr-2 text-[#FF8500]">
+                                        <path d="M21.801 10A10 10 0 1 1 17 3.335"/><path 
+                                        d="m9 11 3 3L22 4"/>
+                                    </svg>
+                                    Delivery in 2-hour time slots
+                                </p>
+
+                                <p >
+                                    <svg 
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                                        class="lucide lucide-circle-check-big-icon lucide-circle-check-big inline mr-2 text-[#FF8500]">
+                                        <path d="M21.801 10A10 10 0 1 1 17 3.335"/><path 
+                                        d="m9 11 3 3L22 4"/>
+                                    </svg>
+                                    DPR certified • Sealed meters • Zero tampering
+                                </p>
+
+                                <p>
+                                    <svg 
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                                        class="lucide lucide-circle-check-big-icon lucide-circle-check-big inline mr-2 text-[#FF8500]">
+                                        <path d="M21.801 10A10 10 0 1 1 17 3.335"/><path 
+                                        d="m9 11 3 3L22 4"/>
+                                    </svg>
+                                    First 500 members get ₦5,000 welcome credit
+                                </p>
+                                
                             </div>
 
                             <div className="grid grid-cols-2 gap-2 md:gap-5 lg:gap-5 w-full">
@@ -397,7 +431,7 @@ function WaitList() {
                                     type="submit"
                                     className="w-full bg-[#FF8500] text-white font-bold text-sm py-3 border rounded-[12px] cursor-pointer mt-[50px] lg:mt-5"
                                 >
-                                    Join WaitList
+                                    Get Early Access + ₦5,000 Credit  &gt;
                                 </button>
                             </form>
                             <p className="text-[12px] ">🔒 Your data is secure. No spam, ever.</p>
@@ -409,16 +443,40 @@ function WaitList() {
 
                     
 
-                    <div className="ml-7  w-full lg:w-[100%] mb-7 md:w-80%">
-                            <p className="lg:font-[600] lg:text-[36px] font-[600] text-[25px]  text-white w-full mb-5">
+                    <div className="flex flex-col w-full lg:w-[100%] mb-7 md:w-80% ">
+                            <p className="lg:font-[600] lg:text-[36px] mx-auto font-[600] text-[25px] items-center  text-white w-auto mb-5">
                                 Testimonials from Our Beta Testers
                             </p>
 
-                            <div className="flex flex-col lg:flex-row sm:flex-col md:flex-col w-[90%] text-[#5E5E5E] gap-7 text-[18px]">
-                                <div className="bg-white border border-[#FF8500] h-[180px] rounded-[30px] w-auto p-7">
-                                    <p>
-                                        No more 5am fuel runs or fighting at stations. This is the future
-                                    </p>
+                            <div className="flex flex-wrap justify-center w-full text-[#5E5E5E] gap-7 text-[18px]">
+                                <div className=" bg-white border border-[#FF8500] rounded-[30px] p-5 w-full max-w-[350px] h-[auto] flex-grow">
+                                    <div className="relative py-7 px-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                                            class="lucide lucide-quote-icon lucide-quote text-[#FF8500] rotate-180 absolute top-0 left-0 w-6 h-6">
+                                            <path 
+                                                d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 
+                                                    0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
+                                            <path 
+                                            d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 
+                                            1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
+                                        </svg>
+                                        <p>
+                                            I get fuel delivered straight to my office for all my vehicles. It’s fast, reliable, and saves me the stress of going to the fuel station.
+                                        </p>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                                            class="lucide lucide-quote-icon lucide-quote text-[#FF8500] absolute bottom-0 right-0 w-6 h-6  ">
+                                            <path 
+                                                d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 
+                                                    0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
+                                            <path 
+                                            d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 
+                                            1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
+                                        </svg>
+                                    </div>
+
                                     <div className="flex flex-row mt-2 gap-5">
                                         <img
                                         src={john}
@@ -436,10 +494,35 @@ function WaitList() {
                                     </div>
                                 </div>
 
-                                <div className="bg-white border border-[#FF8500] h-[180px] rounded-[30px] p-7">
-                                    <p>
-                                        No more 5am fuel runs or fighting at stations. This is the future
-                                    </p>
+                                <div className=" bg-white border border-[#FF8500] rounded-[30px] p-5  w-full max-w-[350px] h-[auto] flex-grow">
+                                    <div className="relative py-7 px-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                                            class="lucide lucide-quote-icon lucide-quote text-[#FF8500] rotate-180 absolute top-0 left-1 w-6 h-6">
+                                            <path 
+                                                d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 
+                                                    0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
+                                            <path 
+                                            d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 
+                                            1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
+                                        </svg>
+
+                                        <p>
+                                            Waking up early to queue at fuel stations used to be my reality. 
+                                            But with ResQ-X no queues, no stress. Just fast and reliable service.
+                                        </p>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                                            class="lucide lucide-quote-icon lucide-quote text-[#FF8500] absolute bottom-0 right-0 w-6 h-6  ">
+                                            <path 
+                                                d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 
+                                                    0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
+                                            <path 
+                                            d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 
+                                            1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
+                                        </svg>
+                                    </div>
                                     <div className="flex flex-row mt-2 gap-5">
                                         <img
                                         src={joy}
@@ -448,7 +531,7 @@ function WaitList() {
                                         />
 
                                         <div>
-                                            <p>Joy A.</p>
+                                            <p>Rahima A.</p>
                                             <p className="text-yellow-500 ">
                                                 ★★★★★
                                             </p>
@@ -457,10 +540,35 @@ function WaitList() {
                                     </div>
                                 </div>
 
-                                <div className="bg-white border border-[#FF8500] h-[180px] rounded-[30px] p-7">
-                                    <p>
-                                        No more getting cheated at fuel station, fair pricing and accurate litres
-                                    </p>
+                                <div className=" bg-white border border-[#FF8500] rounded-[30px] p-5 w-full max-w-[350px] h-[auto] flex-grow">
+                                    <div className="relative py-7 px-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                                            class="lucide lucide-quote-icon lucide-quote text-[#FF8500] rotate-180 absolute top-0 left-1 w-6 h-6">
+                                            <path 
+                                                d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 
+                                                    0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
+                                            <path 
+                                            d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 
+                                            1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
+                                        </svg>
+
+                                        <p>
+                                            No more getting cheated at fuel stations — enjoy fair pricing, accurate litres, and total peace of mind with every delivery.
+                                        </p>
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                                            class="lucide lucide-quote-icon lucide-quote text-[#FF8500] absolute bottom-0 right-0 w-6 h-6  ">
+                                            <path 
+                                                d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 
+                                                    0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
+                                            <path 
+                                            d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 
+                                            1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
+                                        </svg>
+                                    </div>
+
                                     <div className="flex flex-row mt-2 gap-5">
                                         <img
                                         src={james}
@@ -477,12 +585,10 @@ function WaitList() {
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                     </div>
 
-                    <div className="w-[80%] items-center flex flex-col justify-center text-white mb-7">
+                    <div className="ml-0 w-full items-center flex flex-col justify-center text-white mb-7 text-center">
                         <div className="items-center flex flex-col justify-center">
                             <p  className="flex items-center space-x-2 bg-[#FF85002B] px-7 py-3 rounded-4xl font-bold">
                                 <span className="mr-4">
@@ -509,9 +615,9 @@ function WaitList() {
                         </div>
                     </div>
 
-                    <div className="ml-7  w-full lg:w-[100%] mb-7 md:w-80%">
-                            <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3 w-[90%] text-[#5E5E5E] ">
-                                <div className="bg-[#FF85002B] text-white h-auto border border-[#FF8500] rounded-[30px] w-auto p-7 flex flex-col">
+                    <div className="w-full lg:w-[100%] mb-7 md:w-80%">
+                            <div className="flex flex-wrap items-center gap-4 justify-center w-[90%] text-[#5E5E5E]  mx-auto">
+                                <div className="bg-[#FF85002B] text-white h-[220px] border border-[#FF8500] rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg 
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
@@ -527,7 +633,7 @@ function WaitList() {
                                     </p>
                                 </div>
 
-                                <div className="bg-[#FF85002B] text-white h-auto border border-[#FF8500]  rounded-[30px] w-auto p-7 flex flex-col">
+                                <div className="bg-[#FF85002B] text-white h-[220px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg 
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
@@ -544,7 +650,7 @@ function WaitList() {
                                     </p>
                                 </div>
 
-                                <div className="bg-[#FF85002B] text-white h-auto border-[#FF8500]  rounded-[30px] w-auto p-7 flex flex-col">
+                                <div className="bg-[#FF85002B] text-white h-[220px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                                             <path fill-rule="evenodd" d="M15.22 6.268a.75.75 0 0 1 .968-.431l5.942 2.28a.75.75 0 0 1 .431.97l-2.28 
@@ -560,8 +666,9 @@ function WaitList() {
                                         No more inflated receipts, ghost purchases, or driver kickbacks. Transparent pricing always.
                                     </p>
                                 </div>
+                                
 
-                                <div className="bg-[#FF85002B] text-white h-auto border border-[#FF8500]  rounded-[30px] w-auto p-7 flex flex-col">
+                                <div className="bg-[#FF85002B] text-white h-[220px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
@@ -579,7 +686,7 @@ function WaitList() {
                                     </p>
                                 </div>
 
-                                <div className="bg-[#FF85002B] text-white h-auto border border-[#FF8500] rounded-[30px] w-auto p-7 flex flex-col">
+                                <div className="bg-[#FF85002B] text-white h-[220px] border border-[#FF8500] rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
                                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
@@ -594,6 +701,8 @@ function WaitList() {
                                         The more you order, the more you save. Up to 15% off for high-volume corporate accounts.
                                     </p>
                                 </div>
+
+                                
 
                             </div>
                     </div>
