@@ -443,7 +443,7 @@ function WaitList() {
 
                     
 
-                    <div className="flex flex-col w-full lg:w-[100%] mb-7 md:w-80% ">
+                    <div className="flex flex-col w-full lg:w-[100%] mb-7 md:w-80% mt-5">
                             <p className="lg:font-[600] lg:text-[36px] mx-auto font-[600] text-[25px] items-center  text-white w-auto mb-5">
                                 Testimonials from Our Beta Testers
                             </p>
