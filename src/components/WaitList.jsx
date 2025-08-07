@@ -60,6 +60,7 @@ function WaitList() {
     days: 0,
     hours: 0,
     minutes: 0,
+    seconds: 0,
     });
 
     useEffect(() => {
@@ -71,20 +72,24 @@ function WaitList() {
 
         if (diff <= 0) {
         clearInterval(interval);
-        setTimeLeft({ days: 0, hours: 0, minutes: 0 });
+        setTimeLeft({ days: 0, hours: 0, minutes: 0,seconds: 0 });
         return;
         }
 
-        const totalMinutes = Math.floor(diff / (1000 * 60));
-        const days = Math.floor(totalMinutes / (60 * 24));
-        const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
-        const minutes = totalMinutes % 60;
+        const totalSeconds = Math.floor(diff / 1000);
+        const days = Math.floor(totalSeconds / (60 * 60 * 24));
+        const hours = Math.floor((totalSeconds % (60 * 60 * 24)) / (60 * 60));
+        const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+        const seconds = totalSeconds % 60;
 
-        setTimeLeft({ days, hours, minutes });
+        setTimeLeft({ days, hours, minutes, seconds });
     }, 1000);
 
     return () => clearInterval(interval);
     }, []);
+
+    const [accountType, setAccountType] = useState("");
+    const [fuelType, setFuelType] = useState("");
 
 
     return(
@@ -125,9 +130,13 @@ function WaitList() {
                                     Join the Refuel by ResQ-X Waitlist
                                 </p>
                                 <p className="w-[80%]">
-                                    Skip the fuel station. 
-                                    Get fuel delivered wherever you are instantly, later or when it’s urgent.
+                                    Fuel delivered to your home, office, or anywhere in Lagos—on-demand or scheduled.
+                                    Save time. Get quality fuel. Fair pricing.
                                 </p>     
+
+                                <p>
+                                    For individuals & businesses: Cars, Generators, Fleets.
+                                </p>
                             </div>
 
                             <div className="grid grid-cols-2 gap-2 md:gap-5 lg:gap-5 w-full">
@@ -217,31 +226,80 @@ function WaitList() {
                             <div className="flex justify-between text-center text-[#FF2914] font-bold text-3xl px-4">
                                 {/* Days */}
                                 <div className="flex flex-col items-center">
-                                <span>{timeLeft.days}</span>
-                                <span className="text-xs font-normal mt-1 text-[#FF2914]">Days</span>
+                                        <span>{timeLeft.days}</span>
+                                        <span className="text-xs font-normal mt-1 text-[#FF2914]">Days</span>
                                 </div>
 
                                 {/* Hours */}
                                 <div className="flex flex-col items-center">
-                                <span>{timeLeft.hours}</span>
-                                <span className="text-xs font-normal mt-1 text-[#FF2914]">Hours</span>
+                                    <span>{timeLeft.hours}</span>
+                                    <span className="text-xs font-normal mt-1 text-[#FF2914]">Hours</span>
                                 </div>
 
                                 {/* Minutes */}
                                 <div className="flex flex-col items-center">
-                                <span>{timeLeft.minutes}</span>
-                                <span className="text-xs font-normal mt-1 text-[#FF2914]">Minutes</span>
+                                    <span>{timeLeft.minutes}</span>
+                                    <span className="text-xs font-normal mt-1 text-[#FF2914]">Minutes</span>
+                                </div>
+
+                                {/* Seconds */}
+                                <div className="flex flex-col items-center">
+                                    <span>{timeLeft.seconds}</span>
+                                    <span className="text-xs font-normal mt-1 text-[#FF2914]">Seconds</span>
                                 </div>
                             </div>
                         </div>
 
+                        <div className=" tracking-[0.01em] text-white text-[18px] pr-7 w-full ">
+                        <div className=" w-full lg:w-full ">
+                            <div className="items-center">
+                                <p
+                                    className=" font-semibold text-[30px] leading-[100%] mb-3 text-center "
+                                    >Fueling Solutions For:
+                                </p>
+                            </div>
+
+                            <div className=" flex  flex-wrap  items-center gap-4 justify-center w-full ">
+                                <p
+                                    className="border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                >🚛 Fleets and Business</p>
+
+                                <p
+                                    className="border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                >🏢 Corporate Vehicles</p>
+
+                                <p
+                                    className="border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                >🚐 Staff Buses</p>
+
+                                <p
+                                    className="border border-[#FF8500]  w-[200px] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                >🏭 Generator Farms</p>
+
+                                <p
+                                    className="border border-[#FF8500]  w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                >🚗 Ride-hailing Drivers</p>
+
+                                <p
+                                    className="border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                >🏗️ Construction Sites</p>
+
+                                <p
+                                    className="border border-[#FF8500]  w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                >🚘 Everyday Drivers</p>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
 
 
                         </div>
 
 
 
-                        <div className="bg-white w-[80%] border border-[#FF8500] border-[] rounded-4xl py-7 px-0  text-[#777777] flex flex-col items-center gap-5">
+                        <div className="bg-white w-[80%] border h-[800px] border-[#FF8500] border-[] rounded-4xl py-7 px-0  text-[#777777] flex flex-col items-center gap-5">
                             <div className="w-full flex flex-col items-center justify-center gap-3">
                                 <p className="font-semibold text-[30px] leading-[100%] w-[75%] text-center">
                                     Be the first to fuel smarter with Refuel by ResQ-X 
@@ -252,20 +310,88 @@ function WaitList() {
                                 </p>
                             </div>
 
-                            <form id="waitlistForm" className="w-[80%] flex flex-col items-center justify-center gap-4">
-                                <input 
-                                    type="text" 
-                                    name="name"
-                                    placeholder="Tell us your name " 
-                                    className="border border-[#C6C6C6] w-full px-5 py-2 rounded-[12px] focus:outline-none focus:border-[#FF8500] transition duration-300" 
-                                />
+                            <form id="waitlistForm" className="w-[100%] flex flex-col items-center justify-center px-7 gap-4 text-[14px] ">
+                                <div className="flex flex-col items-start w-full  ">
+                                    <p className="mb-2 text-black">
+                                        Account Type
+                                    </p>
+                                    <div className="flex justify-between w-full  text-black gap-2">
+                                        <button 
+                                        type="button"
+                                        onClick={() => setAccountType("personal")}
+                                        className={`border  w-full rounded-[10px]  
+                                        ${accountType === "personal"
+                                        ? "border-[#FF8500] bg-[#FFE0B3]"
+                                        : "border-[#C6C6C6]"} `}
+                                        
+                                        >
+                                            Personal
+                                        </button>
 
-                                <input 
-                                    type="email" 
-                                    name="email"
-                                    placeholder="Enter your email address " 
-                                    className="border border-[#C6C6C6] w-full px-5 py-2 rounded-[12px] focus:outline-none focus:border-[#FF8500] transition duration-300" 
-                                />
+                                        <button
+                                        type="button"
+                                        onClick={() => setAccountType("business")}
+                                        className={`border  w-full  py-4 rounded-[10px]
+                                        ${accountType === "business"
+                                        ? "border-[#FF8500]  bg-[#FFE0B3]"
+                                        : "border-[#C6C6C6]"}`}>
+                                            Business
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div className="flex flex-col items-start w-full  ">
+                                    <p className="mb-2  text-black">
+                                        Your Name
+                                    </p>  
+                                    <input 
+                                        type="text" 
+                                        name="name"
+                                        placeholder="John Doe" 
+                                        className="border  text-[#777777] border-[#C6C6C6] w-full px-5 py-2 rounded-[12px] focus:outline-none focus:border-[#FF8500] transition duration-300" 
+                                    />
+                                </div>
+
+                                <div className="flex flex-col items-start w-full  ">
+                                    <p className="mb-2 text-black">
+                                        Your Email
+                                    </p>  
+                                    <input 
+                                        type="text" 
+                                        name="email"
+                                        placeholder="johndoe@gmail.com" 
+                                        className="border  text-[#777777] border-[#C6C6C6] w-full px-5 py-2 rounded-[12px] focus:outline-none focus:border-[#FF8500] transition duration-300" 
+                                    />
+                                </div>
+
+                                <div className="flex flex-col items-start w-full ">
+                                    <p className="mb-2 text-black">
+                                        Primary Fuel Type
+                                    </p>
+                                    <div className="flex justify-between w-full text-black  gap-2">
+                                        <button 
+                                        type="button"
+                                        onClick={() => setFuelType("petrol")}
+                                        className={`border  w-full rounded-[10px]
+                                        ${fuelType === "petrol"
+                                        ? "border-[#FF8500] bg-[#FFE0B3]"
+                                        : "border-[#C6C6C6]"} `}
+                                        
+                                        >
+                                            Petrol (PMS)
+                                        </button>
+
+                                        <button
+                                        type="button"
+                                        onClick={() => setFuelType("diesel")}
+                                        className={`border  w-full py-4 rounded-[10px]
+                                        ${fuelType === "diesel"
+                                        ? "border-[#FF8500]  bg-[#FFE0B3]"
+                                        : "border-[#C6C6C6]"}`}>
+                                            Diesel (AGO)
+                                        </button>
+                                    </div>
+                                </div>
 
                                 <button
                                     type="submit"
@@ -274,43 +400,14 @@ function WaitList() {
                                     Join WaitList
                                 </button>
                             </form>
+                            <p className="text-[12px] ">🔒 Your data is secure. No spam, ever.</p>
 
                         </div>
-
-
 
 
                     </div>
 
                     
-
-
-                    <div className=" tracking-[0.01em] text-white text-[18px] px-7  w-full my-7">
-                        <div className=" w-full lg:w-[50%]">
-                            <div>
-                                <p
-                                    className=" font-semibold text-[30px] leading-[100%] mb-3 text-center "
-                                    >Fueling Solutions For:
-                                </p>
-                            </div>
-
-                            <div className=" flex flex-col items-center gap-4 md:flex-row md:justify-between w-full">
-                                <p
-                                    className="border border-[#FF8500] w-[70%] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
-                                >Fleets and Business</p>
-
-                                <p
-                                    className="border border-[#FF8500] w-[70%] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
-                                >Everyday Drivers </p>
-
-                                <p
-                                    className="border border-[#FF8500] w-[70%] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
-                                >Busy Professionals </p>
-                            </div>
-                        </div>
-
-                        
-                    </div>
 
                     <div className="ml-7  w-full lg:w-[100%] mb-7 md:w-80%">
                             <p className="lg:font-[600] lg:text-[36px] font-[600] text-[25px]  text-white w-full mb-5">
@@ -330,7 +427,7 @@ function WaitList() {
                                         />
 
                                         <div>
-                                            <p>Femi John</p>
+                                            <p>John O.</p>
                                             <p className="text-yellow-500 ">
                                                 ★★★★★
                                             </p>
@@ -351,7 +448,7 @@ function WaitList() {
                                         />
 
                                         <div>
-                                            <p>Abby Joy</p>
+                                            <p>Joy A.</p>
                                             <p className="text-yellow-500 ">
                                                 ★★★★★
                                             </p>
@@ -372,7 +469,7 @@ function WaitList() {
                                         />
 
                                         <div>
-                                            <p>Obi James</p>
+                                            <p>Damilare B.</p>
                                             <p className="text-yellow-500 ">
                                                 ★★★★★
                                             </p>
@@ -383,7 +480,123 @@ function WaitList() {
 
 
                             </div>
+                    </div>
+
+                    <div className="w-[80%] items-center flex flex-col justify-center text-white mb-7">
+                        <div className="items-center flex flex-col justify-center">
+                            <p  className="flex items-center space-x-2 bg-[#FF85002B] px-7 py-3 rounded-4xl font-bold">
+                                <span className="mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                                        <path fill-rule="evenodd" d="M15.22 6.268a.75.75 0 0 1 .968-.431l5.942 2.28a.75.75 0 0 1 .431.97l-2.28 
+                                        5.94a.75.75 0 1 1-1.4-.537l1.63-4.251-1.086.484a11.2 11.2 0 0 0-5.45 5.173.75.75 0 0 1-1.199.19L9 
+                                        12.312l-6.22 6.22a.75.75 0 0 1-1.06-1.061l6.75-6.75a.75.75 0 0 1 1.06 0l3.606 3.606a12.695 12.695 0 0 
+                                        1 5.68-4.974l1.086-.483-4.251-1.632a.75.75 0 0 1-.432-.97Z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                                For Businesses & Fleet Managers
+                            </p>
+
+                            <p
+                                className=" font-semibold text-[35px] leading-[100%] lg:w-70vw "
+                            >Fuel Your Fleet Without the Hassle.</p>
                         </div>
+
+                        <div className="leading-[30px]  w-[60%] mt-2">
+                            <p className=" text-center">
+                                Reduce operational costs by 25%. Eliminate fuel theft. 
+                                Track every litre. Join companies saving millions with Refuel for Business.
+                            </p>     
+                        </div>
+                    </div>
+
+                    <div className="ml-7  w-full lg:w-[100%] mb-7 md:w-80%">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3 w-[90%] text-[#5E5E5E] ">
+                                <div className="bg-[#FF85002B] text-white h-auto border border-[#FF8500] rounded-[30px] w-auto p-7 flex flex-col">
+                                    <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
+                                        <svg 
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                                            class="lucide lucide-clock-icon lucide-clock "><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/>
+                                        </svg>
+                                    </div>
+                                    
+   
+                                    <p className="font-bold">Zero Vehicle Downtime</p>
+                                    <p className="mb-4 ">
+                                        Fuel delivered directly to your parking lot. Vehicles stay productive, not stuck in fuel queues.
+                                    </p>
+                                </div>
+
+                                <div className="bg-[#FF85002B] text-white h-auto border border-[#FF8500]  rounded-[30px] w-auto p-7 flex flex-col">
+                                    <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
+                                        <svg 
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+                                            stroke-linejoin="round" class="lucide lucide-shield-icon lucide-shield">
+                                            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0
+                                                0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+                                        </svg>
+                                    </div>
+   
+                                    <p className="font-bold">Eliminate Fuel Fraud</p>
+                                    <p className=" ">
+                                        Digital receipts, GPS tracking, and sealed meters. Know exactly where every litre goes.
+                                    </p>
+                                </div>
+
+                                <div className="bg-[#FF85002B] text-white h-auto border-[#FF8500]  rounded-[30px] w-auto p-7 flex flex-col">
+                                    <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                                            <path fill-rule="evenodd" d="M15.22 6.268a.75.75 0 0 1 .968-.431l5.942 2.28a.75.75 0 0 1 .431.97l-2.28 
+                                            5.94a.75.75 0 1 1-1.4-.537l1.63-4.251-1.086.484a11.2 11.2 0 0 0-5.45 5.173.75.75 0 0 1-1.199.19L9 
+                                            12.312l-6.22 6.22a.75.75 0 0 1-1.06-1.061l6.75-6.75a.75.75 0 0 1 1.06 0l3.606 3.606a12.695 12.695 0 0 
+                                            1 5.68-4.974l1.086-.483-4.251-1.632a.75.75 0 0 1-.432-.97Z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+
+   
+                                    <p className="font-bold">25% Cost Reduction</p>
+                                    <p className=" ">
+                                        No more inflated receipts, ghost purchases, or driver kickbacks. Transparent pricing always.
+                                    </p>
+                                </div>
+
+                                <div className="bg-[#FF85002B] text-white h-auto border border-[#FF8500]  rounded-[30px] w-auto p-7 flex flex-col">
+                                    <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                                            class="lucide lucide-phone-icon lucide-phone">
+                                            <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 
+                                            0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+                                        </svg>
+                                    </div>
+
+   
+                                    <p className="font-bold">Dedicated Account Manager</p>
+                                    <p className=" ">
+                                        24/7 support line, priority delivery slots, and customized billing cycles for your business.
+                                    </p>
+                                </div>
+
+                                <div className="bg-[#FF85002B] text-white h-auto border border-[#FF8500] rounded-[30px] w-auto p-7 flex flex-col">
+                                    <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+                                            class="lucide lucide-award-icon lucide-award">
+                                                <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/>
+                                                <circle cx="12" cy="8" r="6"/>
+                                        </svg>
+                                    </div>
+   
+                                    <p className="font-bold">Volume Discounts</p>
+                                    <p className=" ">
+                                        The more you order, the more you save. Up to 15% off for high-volume corporate accounts.
+                                    </p>
+                                </div>
+
+                            </div>
+                    </div>
                 </div>
                 
             </div>
@@ -392,3 +605,20 @@ function WaitList() {
 }
 
 export default WaitList
+
+
+/*
+
+<input 
+    type="email" 
+    name="email"
+    placeholder="Enter your email address " 
+    className="border border-[#C6C6C6] w-full px-5 py-2 rounded-[12px] focus:outline-none focus:border-[#FF8500] transition duration-300" 
+/>
+
+<button
+    type="submit"
+    className="w-full bg-[#FF8500] text-white font-bold text-sm py-3 border rounded-[12px] cursor-pointer mt-[50px] lg:mt-5"
+>
+    Join WaitList
+</button>*/
