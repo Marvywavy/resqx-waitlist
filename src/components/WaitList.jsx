@@ -431,10 +431,10 @@ function WaitList() {
                                     type="submit"
                                     className="w-full bg-[#FF8500] text-white font-bold text-sm py-3 border rounded-[12px] cursor-pointer mt-[50px] lg:mt-5"
                                 >
-                                    Get Early Access + ₦5,000 Credit  &gt;
+                                    Get Early Access + ₦5,000 Credit ➔
                                 </button>
                             </form>
-                            <p className="text-[12px] ">🔒 Your data is secure. No spam, ever.</p>
+                            <p className="text-[12px] ">🔒 Your data is secure.</p>
 
                         </div>
 
