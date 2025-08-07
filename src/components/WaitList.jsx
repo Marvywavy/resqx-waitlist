@@ -429,7 +429,7 @@ function WaitList() {
 
                                 <button
                                     type="submit"
-                                    className="w-full bg-[#FF8500] text-white font-bold text-sm py-3 border rounded-[12px] cursor-pointer mt-[50px] lg:mt-5"
+                                    className="w-full bg-[#FF8500] text-white font-bold text-sm py-3 border rounded-[12px] cursor-pointer mt-[30px] lg:mt-5"
                                 >
                                     Get Early Access + ₦5,000 Credit ➔
                                 </button>
