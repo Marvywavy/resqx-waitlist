@@ -295,31 +295,31 @@ function WaitList() {
 
                             <div className=" flex  flex-wrap  items-center gap-4 justify-center w-full ">
                                 <p
-                                    className="border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                    className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Fleets and Business</p>
 
                                 <p
-                                    className="border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                    className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Corporate Vehicles</p>
 
                                 <p
-                                    className="border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                    className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Staff Buses</p>
 
                                 <p
-                                    className="border border-[#FF8500]  w-[200px] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                    className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 border border-[#FF8500]  w-[200px] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Generator Farms</p>
 
                                 <p
-                                    className="border border-[#FF8500]  w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                    className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 border border-[#FF8500]  w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Ride-hailing Drivers</p>
 
                                 <p
-                                    className="border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                    className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Construction Sites</p>
 
                                 <p
-                                    className="border border-[#FF8500]  w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                    className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 border border-[#FF8500]  w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Everyday Drivers</p>
                             </div>
                         </div>
@@ -462,7 +462,7 @@ function WaitList() {
                                             1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
                                         </svg>
                                         <p>
-                                            I get fuel delivered straight to my office for all my vehicles. It’s fast, reliable, and saves me the stress of going to the fuel station.
+                                            I get fuel delivered straight to my office for all my vehicles. It’s fast, reliable, and frees up my time for what truly matters.
                                         </p>
 
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
@@ -508,8 +508,8 @@ function WaitList() {
                                         </svg>
 
                                         <p>
-                                            Waking up early to queue at fuel stations used to be my reality. 
-                                            But with ResQ-X no queues, no stress. Just fast and reliable service.
+                                            Waking up early to queue for fuel used to be my reality. 
+                                            With Refuel by ResQ-X, no queues, no stress, just fast and reliable service.
                                         </p>
 
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
@@ -617,7 +617,7 @@ function WaitList() {
 
                     <div className="w-full lg:w-[100%] mb-7 md:w-80%">
                             <div className="flex flex-wrap items-center gap-4 justify-center w-[90%] text-[#5E5E5E]  mx-auto">
-                                <div className="bg-[#FF85002B] text-white h-[240px] border border-[#FF8500] rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
+                                <div className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500] rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg 
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
@@ -633,7 +633,7 @@ function WaitList() {
                                     </p>
                                 </div>
 
-                                <div className="bg-[#FF85002B] text-white h-[240px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
+                                <div className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg 
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
@@ -650,7 +650,7 @@ function WaitList() {
                                     </p>
                                 </div>
 
-                                <div className="bg-[#FF85002B] text-white h-[240px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
+                                <div className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                                             <path fill-rule="evenodd" d="M15.22 6.268a.75.75 0 0 1 .968-.431l5.942 2.28a.75.75 0 0 1 .431.97l-2.28 
@@ -668,7 +668,7 @@ function WaitList() {
                                 </div>
                                 
 
-                                <div className="bg-[#FF85002B] text-white h-[240px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
+                                <div className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
@@ -686,7 +686,7 @@ function WaitList() {
                                     </p>
                                 </div>
 
-                                <div className="bg-[#FF85002B] text-white h-[240px] border border-[#FF8500] rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
+                                <div className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500] rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
                                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
