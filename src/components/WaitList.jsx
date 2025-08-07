@@ -590,7 +590,7 @@ function WaitList() {
 
                     <div className="ml-0 w-full items-center flex flex-col justify-center text-white my-7 text-center">
                         <div className="items-center flex flex-col justify-center">
-                            <p  className="flex items-center space-x-2 bg-[#FF85006B] px-7 py-3 rounded-4xl font-bold">
+                            <p  className="flex items-center space-x-2 bg-[#FF8500] px-7 py-3 mb-4 rounded-4xl font-bold">
                                 <span className="mr-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                                         <path fill-rule="evenodd" d="M15.22 6.268a.75.75 0 0 1 .968-.431l5.942 2.28a.75.75 0 0 1 .431.97l-2.28 
