@@ -434,7 +434,7 @@ function WaitList() {
                                     Get Early Access + ₦5,000 Credit ➔
                                 </button>
                             </form>
-                            <p className="text-[12px] ">🔒 Your data is secure.</p>
+                            <p className="text-[12px] ">🔒 Your data is secured.</p>
 
                         </div>
 
