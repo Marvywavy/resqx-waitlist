@@ -603,7 +603,7 @@ function WaitList() {
                             </p>
 
                             <p
-                                className=" font-semibold text-[35px] leading-[100%] lg:w-70vw "
+                                className=" font-semibold text-[35px] leading-[100%] lg:w-70vw mx-10"
                             >Fuel Your Fleet Without the Hassle.</p>
                         </div>
 
