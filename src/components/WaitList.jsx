@@ -97,6 +97,9 @@ function WaitList() {
     };
     }, [accountType, fuelType]); // Empty dependency array ensures this runs only once
 
+
+    //timer
+
     const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -105,7 +108,7 @@ function WaitList() {
     });
 
     useEffect(() => {
-    const endTime = new Date().getTime() + 45 * 24 * 60 * 60 * 1000; // 45 days in ms
+    const endTime = new Date("2025-09-22T23:59:59").getTime(); 
 
     const interval = setInterval(() => {
         const now = new Date().getTime();
