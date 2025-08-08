@@ -534,7 +534,7 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
                                         </svg>
                                     </div>
 
-                                    <div className="flex flex-row mt-2 gap-5">
+                                    <div className="flex flex-row items-center mt-2 gap-5">
                                         <img
                                         src={john}
                                         alt="Resqx fuel Tank"
@@ -580,7 +580,7 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
                                             1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>
                                         </svg>
                                     </div>
-                                    <div className="flex flex-row mt-2 gap-5">
+                                    <div className="flex flex-row items-center  mt-2 gap-5">
                                         <img
                                         src={joy}
                                         alt="Resqx fuel Tank"
@@ -626,7 +626,7 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
                                         </svg>
                                     </div>
 
-                                    <div className="flex flex-row mt-2 gap-5">
+                                    <div className="flex flex-row mt-2 items-center gap-5">
                                         <img
                                         src={james}
                                         alt="Resqx fuel Tank"
