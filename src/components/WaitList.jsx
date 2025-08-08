@@ -1,5 +1,4 @@
 import  {useState, useEffect } from "react"; 
-import $ from "jquery"; 
 import bus from "../assets/images/bus.png"; 
 import logo from "../assets/images/logo.png"; 
 import james from "../assets/images/james.jpg"; 
@@ -9,93 +8,43 @@ import joy from "../assets/images/joy.jpg";
 
 function WaitList() {
 
-      const [accountType, setAccountType] = useState("personal"); //or business
-    const [fuelType, setFuelType] = useState("petrol"); //diesel
+    const [accountType, setAccountType] = useState(""); //or business
+    const [fuelType, setFuelType] = useState(""); //diesel
 
-    const [nameError, setNameError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
 
-  // useEffect will run only once after the component mounts ([]) 
-  useEffect(() => {
-    // Submit handler function for the waitlist form
-    const handleSubmit = function (e) {
-      e.preventDefault(); // Prevent the default HTML form submission behavior (page reload)
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
 
-      // Get values of input fields using jQuery selectors (corrected spacing)
-      const name = $("input[name='name']").val().trim(); 
-      const email = $("input[name='email']").val().trim(); 
-      
-        const entity = accountType.toUpperCase();
-      const fuel_type = fuelType.toUpperCase();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-        // Reset errors first
-      setNameError(false);
-      setEmailError(false);
-
-      let hasError = false;
-
-      if (!name) {
-        setNameError(true);
-        hasError = true;
-      }
-
-      if (!email) {
-        setEmailError(true);
-        hasError = true;
-      } else {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-          setEmailError(true);
-          hasError = true;
-        }
-      }
-
-      if (hasError) {
-        return;
-      }
-
-      const payload = {
-        name, 
-        email,
-        entity,
-        fuel_type,
-      }
-
-      fetch("https://internal-backend-rdhj.onrender.com/waitlist", {
+        try {
+        const res = await fetch("https://internal-backend-rdhj.onrender.com/waitlist", {
             method: "POST",
             headers: {
             "Content-Type": "application/json",
-            "x-api-key": "OGCALMDOWNLETMETHROUGH",
+            "x-resqx-key": "OGCALMDOWNLETMETHROUGH",
             },
-            body: JSON.stringify(payload),
-
-        })
-
-
-        .then((res) => {
-          if (res.ok) {
-            // If submission is successful (status 200 OK)
-            alert("Form submitted successfully!");
-            $("#waitlistForm")[0].reset(); // Reset the form using jQuery
-          } else {
-            alert("Submission failed."); // If response is not OK
-          }
-        })
-        .catch((err) => {
-          // Catch any network errors or issues
-          console.error("Error:", err);
-          alert("Something went wrong.");
+            body: JSON.stringify({
+            name,
+            email,
+            entity :accountType.toUpperCase(),
+            fuel_type: fuelType.toUpperCase(),
+            }),
         });
-    };
 
-    // Attach the submit handler to the form
-    $("#waitlistForm").on("submit", handleSubmit);
+        if (!res.ok) {
+            throw new Error(`HTTP error! Status: ${res.status}`);
+        }
 
-    // Cleanup function to remove the event listener when component unmounts
-    return () => {
-      $("#waitlistForm").off("submit", handleSubmit);
+        const data = await res.json();
+        console.log("Response:", data);
+        alert("Submitted successfully!");
+        } catch (error) {
+        console.error("Error posting to waitlist:", error);
+        alert("Failed to submit");
+        }
     };
-    }, [accountType, fuelType]); // Empty dependency array ensures this runs only once
 
 
     //timer
@@ -221,8 +170,8 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
                                 
                             </div>
 
-                            <div className="grid grid-cols-2 gap-2 md:gap-5 lg:gap-5 w-full">
-                                <div className="flex items-center bg-[#FFFFFF12]  gap-3 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[100%] lg:w-[100%] md:w-[100%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
+                            <div className="grid grid-cols-2 gap-2 md:gap-5 lg:gap-5 w-full ">
+                                <div className="flex items-center select-none bg-[#FFFFFF12]  gap-3 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[100%] lg:w-[100%] md:w-[100%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
                                     <svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M10.192 0.279976L0.231997 10.528C0.0639974 10.696 0.183998 10.96 0.399998 10.96H6.16C6.352 10.96 6.472 11.152 6.4 11.32L2.776 19.456C2.656 19.72 2.992 19.936 3.184 19.72L13.696 7.81598C13.84 7.64798 13.72 7.38398 13.504 7.38398H7.408C7.216 7.38398 7.096 7.19198 7.192 7.02398L10.576 0.567976C10.72 0.327976 10.384 0.087976 10.192 0.279976Z" fill="#FF8500"/>
                                     </svg>
@@ -234,7 +183,7 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
                                     </div>
                                 </div>
 
-                                <div className="flex items-center bg-[#FFFFFF12]  gap-4 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[100%] lg:w-[100%] md:w-[100%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
+                                <div className="flex items-center select-none bg-[#FFFFFF12]  gap-4 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[100%] lg:w-[100%] md:w-[100%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M19 2.8999H18V1.8999C18 1.2999 17.6 0.899902 17 0.899902C16.4 0.899902 16 1.2999 16 1.8999V2.8999H8V1.8999C8 1.2999 7.6 0.899902 7 0.899902C6.4 0.899902 6 1.2999 6 1.8999V2.8999H5C3.3 2.8999 2 4.1999 2 5.8999V19.8999C2 21.5999 3.3 22.8999 5 22.8999H19C20.7 22.8999 22 21.5999 22 19.8999V5.8999C22 4.2999 20.7 2.8999 19 2.8999ZM7 18.8999C6.4 18.8999 6 18.4999 6 17.8999C6 17.2999 6.4 16.8999 7 16.8999C7.6 16.8999 8 17.2999 8 17.8999C8 18.4999 7.6 18.8999 7 18.8999ZM7 14.8999C6.4 14.8999 6 14.4999 6 13.8999C6 13.2999 6.4 12.8999 7 12.8999C7.6 12.8999 8 13.2999 8 13.8999C8 14.4999 7.6 14.8999 7 14.8999ZM12 18.8999C11.4 18.8999 11 18.4999 11 17.8999C11 17.2999 11.4 16.8999 12 16.8999C12.6 16.8999 13 17.2999 13 17.8999C13 18.4999 12.6 18.8999 12 18.8999ZM12 14.8999C11.4 14.8999 11 14.4999 11 13.8999C11 13.2999 11.4 12.8999 12 12.8999C12.6 12.8999 13 13.2999 13 13.8999C13 14.4999 12.6 14.8999 12 14.8999ZM17 18.8999C16.4 18.8999 16 18.4999 16 17.8999C16 17.2999 16.4 16.8999 17 16.8999C17.6 16.8999 18 17.2999 18 17.8999C18 18.4999 17.6 18.8999 17 18.8999ZM17 14.8999C16.4 14.8999 16 14.4999 16 13.8999C16 13.2999 16.4 12.8999 17 12.8999C17.6 12.8999 18 13.2999 18 13.8999C18 14.4999 17.6 14.8999 17 14.8999ZM20 8.8999H4V5.8999C4 5.2999 4.4 4.8999 5 4.8999H6V5.8999C6 6.4999 6.4 6.8999 7 6.8999C7.6 6.8999 8 6.4999 8 5.8999V4.8999H16V5.8999C16 6.4999 16.4 6.8999 17 6.8999C17.6 6.8999 18 6.4999 18 5.8999V4.8999H19C19.6 4.8999 20 5.2999 20 5.8999V8.8999Z" fill="#FF8500"/>
                                     </svg>
@@ -247,7 +196,7 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
                                     </div>
                                 </div>
 
-                                <div className="flex items-center bg-[#FFFFFF12]  gap-3 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[100%] lg:w-[100%] md:w-[100%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
+                                <div className="flex items-center select-none bg-[#FFFFFF12]  gap-3 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[100%] lg:w-[100%] md:w-[100%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_1703_56)">
                                         <path d="M15.375 13.875L17.4375 15.9375L15.9375 17.4375L13.875 15.375L15.375 13.875Z" fill="#FF8500"/>
@@ -274,7 +223,7 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
                                     </div>
                                 </div>
 
-                                <div className="flex items-center bg-[#FFFFFF12]  gap-3 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[100%] lg:w-[100%] md:w-[100%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
+                                <div className="flex items-center select-none bg-[#FFFFFF12]  gap-3 border pt-2 pb-4 px-4 border-[#FF8500] rounded-lg w-[100%] lg:w-[100%] md:w-[100%] hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_1703_56)">
                                         <path d="M15.375 13.875L17.4375 15.9375L15.9375 17.4375L13.875 15.375L15.375 13.875Z" fill="#FF8500"/>
@@ -343,31 +292,31 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
 
                             <div className=" flex  flex-wrap  items-center gap-4 justify-center w-full ">
                                 <p
-                                    className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                    className="hover:shadow-[0_4px_20px_#FF8500] select-none transition-shadow duration-300 border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Fleets and Business</p>
 
                                 <p
-                                    className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                    className="hover:shadow-[0_4px_20px_#FF8500] select-none transition-shadow duration-300 border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Corporate Vehicles</p>
 
                                 <p
-                                    className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                    className="hover:shadow-[0_4px_20px_#FF8500] select-none transition-shadow duration-300 border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Staff Buses</p>
 
                                 <p
-                                    className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 border border-[#FF8500]  w-[200px] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                    className="hover:shadow-[0_4px_20px_#FF8500] select-none transition-shadow duration-300 border border-[#FF8500]  w-[200px] text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Generator Farms</p>
 
                                 <p
-                                    className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 border border-[#FF8500]  w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                    className="hover:shadow-[0_4px_20px_#FF8500] select-none transition-shadow duration-300 border border-[#FF8500]  w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Ride-hailing Drivers</p>
 
                                 <p
-                                    className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                    className="hover:shadow-[0_4px_20px_#FF8500] select-none transition-shadow duration-300 border border-[#FF8500] w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Construction Sites</p>
 
                                 <p
-                                    className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 border border-[#FF8500]  w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
+                                    className="hover:shadow-[0_4px_20px_#FF8500] select-none transition-shadow duration-300 border border-[#FF8500]  w-[200px]  text-center bg-[#FF85002B] rounded-full  leading-[20px] text-[14px] font-normal py-3 px-5 bg"
                                 >Everyday Drivers</p>
                             </div>
                         </div>
@@ -392,7 +341,7 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
                                 </p>
                             </div>
 
-                            <form id="waitlistForm" className="w-[100%] flex flex-col items-center justify-center px-7 gap-4 text-[14px] ">
+                            <form id="waitlistForm" onSubmit={handleSubmit} className="w-[100%] flex flex-col items-center justify-center px-7 gap-4 text-[14px] ">
                                 <div className="flex flex-col items-start w-full  ">
                                     <p className="mb-2 text-black">
                                         Account Type
@@ -431,11 +380,12 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
                                     <input 
                                         type="text" 
                                         name="name"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)} //setting the data inside the input field as name
                                         id="nameInput"
+                                        required
                                         placeholder="John Doe" 
-                                        className={`w-full p-3 border rounded ${
-                                                    nameError ? "border-red-500" : "border-gray-300"
-                                        }`}
+                                        className="w-full p-3 border rounded border-gray-300"
                                     />
                                 </div>
 
@@ -444,13 +394,14 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
                                         Your Email
                                     </p>  
                                     <input 
-                                        type="text" 
+                                        type="email" 
                                         name="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
                                         id="emailInput"
+                                        required
                                         placeholder="johndoe@gmail.com" 
-                                        className={`w-full p-3 border rounded ${
-                                                    emailError ? "border-red-500" : "border-gray-300"
-                                        }`}                                    />
+                                        className="w-full p-3 border rounded border-gray-300"                              />
                                 </div>
 
                                 <div className="flex flex-col items-start w-full ">
@@ -674,7 +625,7 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
 
                     <div className="w-full lg:w-[100%] mb-7 md:w-80%">
                             <div className="flex flex-wrap items-center gap-4 justify-center w-[90%] text-[#5E5E5E]  mx-auto">
-                                <div className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500] rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
+                                <div className="hover:shadow-[0_4px_20px_#FF8500] select-none transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500] rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg 
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
@@ -690,7 +641,7 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
                                     </p>
                                 </div>
 
-                                <div className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
+                                <div className="hover:shadow-[0_4px_20px_#FF8500] select-none transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg 
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
@@ -707,7 +658,7 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
                                     </p>
                                 </div>
 
-                                <div className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
+                                <div className="hover:shadow-[0_4px_20px_#FF8500] select-none transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                                             <path fill-rule="evenodd" d="M15.22 6.268a.75.75 0 0 1 .968-.431l5.942 2.28a.75.75 0 0 1 .431.97l-2.28 
@@ -725,7 +676,7 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
                                 </div>
                                 
 
-                                <div className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
+                                <div className="hover:shadow-[0_4px_20px_#FF8500] select-none transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500]  rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
@@ -743,7 +694,7 @@ const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
                                     </p>
                                 </div>
 
-                                <div className="hover:shadow-[0_4px_20px_#FF8500] transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500] rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
+                                <div className="hover:shadow-[0_4px_20px_#FF8500] select-none transition-shadow duration-300 bg-[#FF85002B] text-white h-[240px] border border-[#FF8500] rounded-[30px] md:w-[48%] lg:w-[30%] p-7 flex flex-col">
                                     <div className="bg-[#FF8500] w-[60px] py-4 flex items-center justify-center rounded-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
                                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
