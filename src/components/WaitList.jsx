@@ -8,6 +8,13 @@ import joy from "../assets/images/joy.jpg";
 
 
 function WaitList() {
+
+      const [accountType, setAccountType] = useState("personal"); //or business
+    const [fuelType, setFuelType] = useState("petrol"); //diesel
+
+    const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+
   // useEffect will run only once after the component mounts ([]) 
   useEffect(() => {
     // Submit handler function for the waitlist form
@@ -17,20 +24,54 @@ function WaitList() {
       // Get values of input fields using jQuery selectors (corrected spacing)
       const name = $("input[name='name']").val().trim(); 
       const email = $("input[name='email']").val().trim(); 
+      
+        const entity = accountType.toUpperCase();
+      const fuel_type = fuelType.toUpperCase();
+
+        // Reset errors first
+      setNameError(false);
+      setEmailError(false);
+
+      let hasError = false;
+
+      if (!name) {
+        setNameError(true);
+        hasError = true;
+      }
+
+      if (!email) {
+        setEmailError(true);
+        hasError = true;
+      } else {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          setEmailError(true);
+          hasError = true;
+        }
+      }
+
+      if (hasError) {
+        return;
+      }
+
+      const payload = {
+        name, 
+        email,
+        entity,
+        fuel_type,
+      }
+
+      fetch("https://internal-backend-rdhj.onrender.com/waitlist", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            "x-api-key": "OGCALMDOWNLETMETHROUGH",
+            },
+            body: JSON.stringify(payload),
+
+        })
 
 
-
-      // Create a new FormData object to format the data like an HTML form
-      const formData = new FormData();
-      formData.append("name", name); // Add name to the form
-      formData.append("email", email); // Add email to the form
-      formData.append("_subject", "New ResQ-X Waitlist Signup!"); // Custom email subject
-
-      // Send form data using fetch() to FormSubmit endpoint
-      fetch("https://formsubmit.co/adebayotitilayo02@gmail.com", {
-        method: "POST", // HTTP POST method means we are sending data
-        body: formData, // We are sending FormData, not JSON
-      })
         .then((res) => {
           if (res.ok) {
             // If submission is successful (status 200 OK)
@@ -54,7 +95,7 @@ function WaitList() {
     return () => {
       $("#waitlistForm").off("submit", handleSubmit);
     };
-    }, []); // Empty dependency array ensures this runs only once
+    }, [accountType, fuelType]); // Empty dependency array ensures this runs only once
 
     const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -88,8 +129,12 @@ function WaitList() {
     return () => clearInterval(interval);
     }, []);
 
-    const [accountType, setAccountType] = useState("");
-    const [fuelType, setFuelType] = useState("");
+  
+
+    /**
+     * const [accountType, setAccountType] = useState("personal"); // or "business"
+const [fuelType, setFuelType] = useState("petrol"); // or "diesel"
+     */
 
 
     return(
@@ -352,6 +397,7 @@ function WaitList() {
                                     <div className="flex justify-between w-full  text-black gap-2">
                                         <button 
                                         type="button"
+                                        name="entity"
                                         onClick={() => setAccountType("personal")}
                                         className={`border  w-full rounded-[10px]  
                                         ${accountType === "personal"
@@ -364,6 +410,7 @@ function WaitList() {
 
                                         <button
                                         type="button"
+                                        name="entity"
                                         onClick={() => setAccountType("business")}
                                         className={`border  w-full  py-4 rounded-[10px]
                                         ${accountType === "business"
@@ -381,8 +428,11 @@ function WaitList() {
                                     <input 
                                         type="text" 
                                         name="name"
+                                        id="nameInput"
                                         placeholder="John Doe" 
-                                        className="border  text-[#777777] border-[#C6C6C6] w-full px-5 py-2 rounded-[12px] focus:outline-none focus:border-[#FF8500] transition duration-300" 
+                                        className={`w-full p-3 border rounded ${
+                                                    nameError ? "border-red-500" : "border-gray-300"
+                                        }`}
                                     />
                                 </div>
 
@@ -393,9 +443,11 @@ function WaitList() {
                                     <input 
                                         type="text" 
                                         name="email"
+                                        id="emailInput"
                                         placeholder="johndoe@gmail.com" 
-                                        className="border  text-[#777777] border-[#C6C6C6] w-full px-5 py-2 rounded-[12px] focus:outline-none focus:border-[#FF8500] transition duration-300" 
-                                    />
+                                        className={`w-full p-3 border rounded ${
+                                                    emailError ? "border-red-500" : "border-gray-300"
+                                        }`}                                    />
                                 </div>
 
                                 <div className="flex flex-col items-start w-full ">
@@ -405,6 +457,7 @@ function WaitList() {
                                     <div className="flex justify-between w-full text-black  gap-2">
                                         <button 
                                         type="button"
+                                        name="fuel_type"
                                         onClick={() => setFuelType("petrol")}
                                         className={`border  w-full rounded-[10px]
                                         ${fuelType === "petrol"
@@ -417,6 +470,7 @@ function WaitList() {
 
                                         <button
                                         type="button"
+                                        name="fuel_type"
                                         onClick={() => setFuelType("diesel")}
                                         className={`border  w-full py-4 rounded-[10px]
                                         ${fuelType === "diesel"
