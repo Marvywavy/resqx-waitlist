@@ -11,8 +11,8 @@ function WaitList() {
 
     const [showPopup, setShowPopup] = useState(false);  
 
-    const [accountType, setAccountType] = useState(""); //or business
-    const [fuelType, setFuelType] = useState(""); //diesel
+    const [accountType, setAccountType] = useState("personal"); //or business
+    const [fuelType, setFuelType] = useState("petrol"); //diesel
 
 
     const [name, setName] = useState("");
@@ -441,13 +441,13 @@ function WaitList() {
                                     Get Early Access + ₦5,000 Credit ➔
                                 </button>
                             </form>
-                            <p className="text-[12px] ">🔒 Your data is secured.</p>
+                            <p className="text-[12px]  ">🔒 Your data is secured.</p>
 
                             {showPopup && (
                                 <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
                                     <div className="relative bg-white px-6 py-4 rounded-[30px] shadow-lg text-center w-[270px] h-[270px] lg:w-[362px] lg:h-[270px] flex flex-col justify-center ">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                            className="absolute right-[20px] top-[30px] -translate-y-1/2 cursor-pointer"
+                                            className="absolute right-[20px] top-[30px] -translate-y-1/2 text-[#777777] cursor-pointer"
                                                 onClick={() => {
                                                     setShowPopup(false); // close popup
                                                 }}
