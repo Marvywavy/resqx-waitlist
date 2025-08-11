@@ -9,7 +9,7 @@ import checkmark from "../assets/images/checkmark.gif";
 
 function WaitList() {
 
-    const [showPopup, setShowPopup] = useState("false");
+    const [showPopup, setShowPopup] = useState(false);  
 
     const [accountType, setAccountType] = useState(""); //or business
     const [fuelType, setFuelType] = useState(""); //diesel
@@ -42,7 +42,7 @@ function WaitList() {
 
         const data = await res.json();
         console.log("Response:", data);
-        setShowPopup(false); // show popup
+        setShowPopup(true); // show popup
         } catch (error) {
         console.error("Error posting to waitlist:", error);
         alert("Failed to submit");
@@ -445,7 +445,7 @@ function WaitList() {
 
                             {showPopup && (
                                 <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-                                    <div className="relative bg-white px-6 py-4 rounded-lg shadow-lg text-center w-[362px] h-[270px] flex flex-col justify-center ">
+                                    <div className="relative bg-white px-6 py-4 rounded-[30px] shadow-lg text-center w-[362px] h-[270px] flex flex-col justify-center ">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                                             className="absolute right-[20px] top-[30px] -translate-y-1/2 cursor-pointer"
                                                 onClick={() => {
@@ -465,7 +465,7 @@ function WaitList() {
                                             />
                                         </div>
                                         <p 
-                                            className="text-[#777777] font-bold">
+                                            className="text-[#777777] font-medium">
                                             Your details have been successfully added to the waitlist.
                                         </p>
                                     </div>
