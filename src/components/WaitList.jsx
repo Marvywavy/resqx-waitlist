@@ -42,7 +42,7 @@ function WaitList() {
 
         const data = await res.json();
         console.log("Response:", data);
-        setShowPopup(true); // show popup
+        setShowPopup(false); // show popup
         } catch (error) {
         console.error("Error posting to waitlist:", error);
         alert("Failed to submit");
